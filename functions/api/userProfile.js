@@ -23,13 +23,14 @@ exports.userProfile = functions.https.onCall(async (data, context) => {
       .getUser(userId);
 
     if(user) {
-      logger.log('User found:', user);
-      return { status: "success", user };
+      const { uid, email, displayName } = user;
+      logger.log('User found:', { uid, email, displayName });
+      return { status: "success", user: { uid, email, displayName } };
     } else {
       logger.log('User not found');
       throw new functions.https.HttpsError(
-        'not-found',
-        'User not found'
+      'not-found',
+      'User not found'
       );
     }
 

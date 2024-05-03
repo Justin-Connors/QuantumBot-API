@@ -16,18 +16,17 @@ exports.logout = functions.https.onCall(async (data, context) => {
     
     const { email } = data;
     
-    const user = await admin
-      .auth()
-      .getUserByEmail(email);
+    const userRecord = await admin.auth().getUserByEmail(email);
 
-    if(user) {
-      logger.log('User found:', user);
-      return { status: "success", user };
+    if (userRecord) {
+      const { uid, email } = userRecord;
+      logger.log('User found:', { uid, email });
+      return { status: "success", user: { uid, email } };
     } else {
       logger.log('User not found');
       throw new functions.https.HttpsError(
-        'not-found',
-        'User not found'
+      'not-found',
+      'User not found'
       );
     }
 
