@@ -39,6 +39,8 @@ To try out the project, follow these steps:
 
 ## API Endpoints
 
+- Loom video showing API endpoints: [Video Link](https://www.loom.com/share/63cc7b9e5ed84942bf8832d349336795)
+
 The following API endpoints are available:
 
 - `/api/addMessage`: add's a message to the message collection of the chats collection
