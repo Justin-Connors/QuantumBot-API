@@ -52,3 +52,4 @@ The following API endpoints are available:
 - `/api/logout`: logs-out a user
 - `/api/sendMessage`: sends a message to the message collection
 - `/api/userProfile`: gets the userId and returns the userId, email, and name
+- `/api/deleteMessage`: takes the userId and a messageId from the user and deletes that message from the collection
