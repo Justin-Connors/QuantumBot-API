@@ -40,7 +40,7 @@ To try out the project, follow these steps:
 ## API Endpoints
 
 - Loom video showing API endpoints: [Video Link](https://www.loom.com/share/63cc7b9e5ed84942bf8832d349336795)
-- [Pitch Slideshow](https://pitch.com/v/quantumbots-api-kvy6k6)
+- Slideshow briefly explaining each API enpoint: [Pitch Slideshow](https://pitch.com/v/quantumbots-api-kvy6k6)
 
 The following API endpoints are available:
 
