@@ -3,8 +3,6 @@ admin.initializeApp();
 
 // Function imports
 const {addMessage} = require('./api/addMessage');
-const {login} = require('./api/login');
-const {logout} = require('./api/logout');
 const {userProfile} = require('./api/userProfile');
 const {createChat} = require('./api/createChat');
 const {getChat} = require('./api/getChat');
@@ -14,8 +12,6 @@ const {deleteMessage} = require('./api/deleteMessage');
 
 // Function exports
 exports.addMessage = addMessage;
-exports.login = login;
-exports.logout = logout;
 exports.userProfile = userProfile;
 exports.createChat = createChat;
 exports.getChat = getChat;
