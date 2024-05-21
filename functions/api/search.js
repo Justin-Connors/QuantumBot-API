@@ -2,12 +2,16 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const { logger } = functions;
 
-exports.search = functions.https.onRequest(async (req, res) => {
+exports.search = functions.https.onCall(async (data, context) => {
   try {
 
   } catch(e) {
     logger.error(e);
-    res.status(500).send('Error searching chats/messages or not found');
+      throw new functions.https.HttpsError(
+        'internal',
+        'An error occurred while searching',
+        e.message
+      );
   }
 
 });
