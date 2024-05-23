@@ -6,27 +6,30 @@ exports.addMessage = functions.https.onCall(async (data, context) => {
   try {
     logger.log('Received message request data:', data);
 
-    if(!data.text || !data.userId) {
-      logger.log('Required fields text or userId are missing:', data);
+    if(!data.text || !data.userId || !data.chatId) {
+      logger.log('Required fields text, chatId, or userId are missing:', data);
       throw new functions.https.HttpsError(
         'invalid-argument',
-        'text and userId are required'
+        'text, userId and chatId are required'
       );
     } 
     
-    const { text, userId } = data;
+    const { text, userId, chatId } = data;
     
     const messageData = {
       text,
       userId,
+      chatId,
       createdAt: admin.firestore.FieldValue.serverTimestamp()
     };
     
     // Adds the message to the users subcollection in firestore
     const messageRef = await admin
       .firestore()
-      .collection("chats")
+      .collection("users")
       .doc(userId)
+      .collection("chats")
+      .doc(chatId)
       .collection("messages")
       .add(messageData);
 

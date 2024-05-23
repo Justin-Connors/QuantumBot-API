@@ -39,17 +39,10 @@ To try out the project, follow these steps:
 
 ## API Endpoints
 
-- Loom video showing API endpoints: [Video Link](https://www.loom.com/share/63cc7b9e5ed84942bf8832d349336795)
-- Slideshow briefly explaining each API enpoint: [Pitch Slideshow](https://pitch.com/v/quantumbots-api-kvy6k6)
+- Loom video showing API endpoints: WIP
+- Slideshow briefly explaining each API enpoint: WIP
 
 The following API endpoints are available:
 
 - `/api/addMessage`: add's a message to the message collection of the chats collection
-- `/api/createChat`: creates a chat in the chats collection
-- `/api/getChat`: gets a chat from the chats collection
-- `/api/logEvent`: logs events of the firestore database
-- `/api/login`: logs-in a user
-- `/api/logout`: logs-out a user
-- `/api/sendMessage`: sends a message to the message collection
-- `/api/userProfile`: gets the userId and returns the userId, email, and name
-- `/api/deleteMessage`: takes the userId and a messageId from the user and deletes that message from the collection
+- `WIP`
