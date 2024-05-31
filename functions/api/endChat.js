@@ -12,6 +12,9 @@ exports.endChat = functions.https.onCall(async (data, context) => {
                                .doc(userId)
                                .collection('chats')
                                .doc(chatId)
+                               .collection('messages')
+                               .orderBy('createdAt', 'desc')
+                               .limit(20)
                                .get();
 
     const chatData = chatDoc.data();
@@ -22,8 +25,9 @@ exports.endChat = functions.https.onCall(async (data, context) => {
                .doc(userId)
                .collection('chats')
                .doc(chatId)
-               .set(chatData);
-
+               .collection('messages')
+               .add(chatData);
+               
     // Delete the chat document
     await chatDoc.ref.delete();
 
